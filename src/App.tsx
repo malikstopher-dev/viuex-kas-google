@@ -44,7 +44,7 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F7F7F5] dark:bg-[#111318] font-sans antialiased text-[#111318] dark:text-[#F7F7F5] selection:bg-[#A21A8D] selection:text-white transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-[#F3F2EE] font-sans antialiased text-[#111318] selection:bg-[#A21A8D] selection:text-white">
       <Navbar />
       <main className="flex-grow">
         {renderCurrentView()}

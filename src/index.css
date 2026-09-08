@@ -5,39 +5,52 @@
 @theme {
   --font-editorial: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-brand-canvas: #F3F2EE;
+  --color-brand-white: #FFFFFF;
   --color-brand-dark: #111318;
   --color-brand-graphite: #25282E;
-  --color-brand-offwhite: #F7F7F5;
-  --color-brand-silver: #D9DBDE;
-  --color-brand-grey: #666B73;
+  --color-brand-muted: #71747A;
+  --color-brand-rules: #D8D8D5;
   --color-brand-magenta: #A21A8D;
   --color-brand-magenta-dark: #871375;
 }
 
 html {
-  background-color: #111318;
-  color: #F7F7F5;
-  color-scheme: dark;
+  background-color: #F3F2EE;
+  color: #111318;
+  color-scheme: light;
 }
 
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #111318;
-  color: #F7F7F5;
+  background-color: #F3F2EE;
+  color: #111318;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 .font-serif-editorial {
   font-family: "Playfair Display", Georgia, serif;
 }
 
-/* Hairline borders and custom utilities matching AKGLOBAL stationery */
+/* Hairline borders matching AKGLOBAL Swiss architectural stationery */
 .border-fine {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: #D8D8D5;
 }
 
 .border-fine-dark {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: #25282E;
 }
+
+/* Subtle motion transitions strictly capped to corporate specifications */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 
 

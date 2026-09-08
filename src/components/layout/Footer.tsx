@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import { Logo } from '../brand/Logo';
 import { RouteId } from '../../types';
-import { Phone, Mail, MapPin, ArrowRight, ShieldCheck, FileText } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { language, setLanguage, navigate, t } = useLanguage();
@@ -12,106 +12,47 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#111318] text-[#D9DBDE] border-t-2 border-[#A21A8D]/40">
-      {/* Top Statement Band */}
-      <div className="border-b border-white/10 py-12 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="max-w-2xl">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-[#A21A8D] block mb-2">
-              {t.stationery.geoTag}
-            </span>
-            <h3 className="text-xl sm:text-2xl font-serif text-white font-normal leading-snug">
-              {t.homepage.procurementTitle}
-            </h3>
-            <p className="text-sm text-[#D9DBDE]/70 mt-2">
-              {t.homepage.procurementBody}
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-4">
-            <button
-              onClick={() => handleNav('rfq')}
-              className="inline-flex items-center space-x-2 bg-[#A21A8D] text-white hover:bg-[#871375] px-6 py-3 rounded-[2px] text-xs font-semibold tracking-widest uppercase transition-colors group cursor-pointer border border-[#A21A8D]"
-            >
-              <FileText className="w-4 h-4 text-white" />
-              <span>{t.nav.rfq}</span>
-              <ArrowRight className="w-3.5 h-3.5 text-white/70 group-hover:translate-x-0.5 transition-transform" />
-            </button>
-            <button
-              onClick={() => handleNav('contact')}
-              className="inline-flex items-center space-x-2 border border-white/20 text-white hover:border-white/50 px-6 py-3 rounded-[2px] text-xs font-semibold tracking-widest uppercase transition-colors cursor-pointer"
-            >
-              <span>{t.nav.contact}</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Footer Directory */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
-          {/* Column 1 & 2: Master Identity */}
-          <div className="lg:col-span-2 space-y-6">
-            <Logo variant="dark" size="lg" />
-            
-            <p className="text-sm text-[#D9DBDE]/80 leading-relaxed max-w-md pt-2">
-              {t.stationery.registeredEntity}
-              <br />
-              {t.stationery.regNumber}
-            </p>
-
-            <div className="p-4 bg-[#25282E]/40 border border-white/10 rounded-xs text-xs text-[#D9DBDE]/90 space-y-2">
-              <div className="flex items-start space-x-2.5">
-                <ShieldCheck className="w-4 h-4 text-[#A21A8D] shrink-0 mt-0.5" />
-                <span>
-                  <strong className="text-white font-medium">{t.footer.geographicScope}:</strong>{' '}
-                  {t.footer.geographicDesc}
-                </span>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-3 text-xs pt-1">
-              <span className="text-white/40">{t.footer.language}:</span>
-              <button
-                onClick={() => setLanguage('en')}
-                className={`font-semibold uppercase tracking-wider transition-colors ${
-                  language === 'en' ? 'text-white underline underline-offset-4 decoration-[#A21A8D]' : 'text-white/50 hover:text-white'
-                }`}
-              >
-                English
-              </button>
-              <span className="text-white/30">|</span>
-              <button
-                onClick={() => setLanguage('fr')}
-                className={`font-semibold uppercase tracking-wider transition-colors ${
-                  language === 'fr' ? 'text-white underline underline-offset-4 decoration-[#A21A8D]' : 'text-white/50 hover:text-white'
-                }`}
-              >
-                Français
-              </button>
+    <footer className="bg-[#111318] text-[#D8D8D5] border-t border-[#25282E]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12">
+          {/* Identity & Legal Registration */}
+          <div className="md:col-span-4 space-y-4">
+            <Logo variant="dark" size="md" />
+            <div className="space-y-1 text-xs text-[#71747A] pt-2">
+              <p className="font-semibold text-white tracking-wider uppercase">
+                {t.stationery.companyName}
+              </p>
+              <p className="font-mono text-[11px] text-[#A21A8D]">
+                Reg. 202074701907
+              </p>
+              <p className="text-xs text-[#71747A] pt-2 max-w-xs leading-relaxed">
+                {language === 'fr'
+                  ? 'Fourniture industrielle et approvisionnement technique. Afrique du Sud & République démocratique du Congo.'
+                  : 'Industrial supply and technical procurement. South Africa & Democratic Republic of the Congo.'}
+              </p>
             </div>
           </div>
 
-          {/* Column 3: Corporate Links */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white border-b border-white/10 pb-2.5">
-              {t.footer.company}
+          {/* Navigation */}
+          <div className="md:col-span-3 space-y-3">
+            <h4 className="text-[11px] font-bold uppercase tracking-[0.16em] text-white">
+              {t.footer.quickLinks}
             </h4>
-            <ul className="space-y-2.5 text-xs text-[#D9DBDE]/80">
-              <li>
-                <button
-                  onClick={() => handleNav('home')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  {t.nav.home}
-                </button>
-              </li>
+            <ul className="space-y-2 text-xs text-[#A0A5AD]">
               <li>
                 <button
                   onClick={() => handleNav('about')}
                   className="hover:text-white transition-colors cursor-pointer"
                 >
                   {t.nav.company}
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNav('products')}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
+                  {t.nav.products}
                 </button>
               </li>
               <li>
@@ -138,112 +79,87 @@ export const Footer: React.FC = () => {
                   {t.nav.rfq}
                 </button>
               </li>
-            </ul>
-          </div>
-
-          {/* Column 4: Products & Categories */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white border-b border-white/10 pb-2.5">
-              {t.footer.products}
-            </h4>
-            <ul className="space-y-2.5 text-xs text-[#D9DBDE]/80">
               <li>
                 <button
-                  onClick={() => handleNav('products-lifting')}
-                  className="hover:text-white transition-colors text-left cursor-pointer"
+                  onClick={() => handleNav('contact')}
+                  className="hover:text-white transition-colors cursor-pointer"
                 >
-                  {t.categories.lifting.title}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNav('products-fasteners')}
-                  className="hover:text-white transition-colors text-left cursor-pointer"
-                >
-                  {t.categories.fasteners.title}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNav('products-hardware')}
-                  className="hover:text-white transition-colors text-left cursor-pointer"
-                >
-                  {t.categories.hardware.title}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNav('procurement')}
-                  className="hover:text-white transition-colors text-left cursor-pointer"
-                >
-                  {t.categories.procurement.title}
+                  {t.nav.contact}
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Column 5: Official Contact & Base */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white border-b border-white/10 pb-2.5">
-              {t.footer.operatingBase}
+          {/* Contact Details */}
+          <div className="md:col-span-5 space-y-3">
+            <h4 className="text-[11px] font-bold uppercase tracking-[0.16em] text-white">
+              {t.nav.contact}
             </h4>
-            
-            <div className="space-y-3 text-xs text-[#D9DBDE]/80">
+            <div className="space-y-2.5 text-xs text-[#A0A5AD]">
               <div className="flex items-start space-x-2.5">
-                <MapPin className="w-4 h-4 text-[#A21A8D] shrink-0 mt-0.5" />
-                <span>
-                  1 Broadacres Drive, Fourways<br />
-                  Sandton, 2055<br />
-                  South Africa
+                <MapPin className="w-3.5 h-3.5 text-[#A21A8D] shrink-0 mt-0.5" />
+                <span className="leading-relaxed">
+                  1 Broadacres Drive, Fourways, Sandton, 2055, South Africa
                 </span>
               </div>
 
-              <div className="flex items-center space-x-2.5 pt-1">
-                <Phone className="w-4 h-4 text-[#A21A8D] shrink-0" />
-                <a href="tel:+27829556071" className="hover:text-white transition-colors">
+              <div className="flex items-center space-x-2.5">
+                <Phone className="w-3.5 h-3.5 text-[#A21A8D] shrink-0" />
+                <a href="tel:+27829556071" className="hover:text-white transition-colors font-mono">
                   082 955 6071
                 </a>
               </div>
 
               <div className="space-y-1 pt-1">
                 <div className="flex items-center space-x-2.5">
-                  <Mail className="w-4 h-4 text-[#A21A8D] shrink-0" />
-                  <a
-                    href="mailto:aakasongo.77@gmail.com"
-                    className="hover:text-white transition-colors break-all"
-                  >
+                  <Mail className="w-3.5 h-3.5 text-[#A21A8D] shrink-0" />
+                  <a href="mailto:aakasongo.77@gmail.com" className="hover:text-white transition-colors font-mono text-[11px]">
                     aakasongo.77@gmail.com
                   </a>
                 </div>
-                <div className="flex items-center space-x-2.5 pl-6.5">
-                  <a
-                    href="mailto:AkilimaliglobalT@gmail.com"
-                    className="hover:text-white transition-colors text-[11px] text-white/60 break-all"
-                  >
+                <div className="flex items-center space-x-2.5 pl-6">
+                  <a href="mailto:AkilimaliglobalT@gmail.com" className="hover:text-white transition-colors font-mono text-[11px] text-[#71747A]">
                     AkilimaliglobalT@gmail.com
                   </a>
                 </div>
               </div>
+            </div>
 
-              <div className="text-[11px] text-white/50 pt-2 border-t border-white/10">
-                {t.stationery.directorLabel}: {t.stationery.directorName}
-              </div>
+            {/* Language Switcher */}
+            <div className="pt-3 flex items-center space-x-3 text-xs">
+              <span className="text-[#71747A] text-[11px] uppercase tracking-wider">Language:</span>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`text-xs font-semibold tracking-wider transition-colors cursor-pointer ${
+                  language === 'en' ? 'text-white underline underline-offset-4 decoration-[#A21A8D]' : 'text-[#71747A] hover:text-white'
+                }`}
+              >
+                EN
+              </button>
+              <span className="text-[#25282E]">|</span>
+              <button
+                onClick={() => setLanguage('fr')}
+                className={`text-xs font-semibold tracking-wider transition-colors cursor-pointer ${
+                  language === 'fr' ? 'text-white underline underline-offset-4 decoration-[#A21A8D]' : 'text-[#71747A] hover:text-white'
+                }`}
+              >
+                FR
+              </button>
             </div>
           </div>
         </div>
 
         {/* Bottom Legal Band */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#D9DBDE]/60 gap-4">
+        <div className="mt-12 pt-6 border-t border-[#25282E] flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#71747A] gap-3">
           <div>
             © {new Date().getFullYear()} AKGLOBAL TRADING PTY (LTD). {t.footer.rights}
           </div>
-          <div className="flex items-center space-x-6">
-            <span>{t.footer.honestNotice}</span>
-            <span className="text-white/20">•</span>
-            <span className="text-white/40">Fourways, Sandton</span>
+          <div className="flex items-center space-x-3">
+            <span>Fourways • Sandton • South Africa</span>
           </div>
         </div>
       </div>
     </footer>
   );
 };
+

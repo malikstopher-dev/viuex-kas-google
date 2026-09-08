@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Theme } from '../types';
 
 interface ThemeContextType {
@@ -11,20 +11,30 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [theme, setThemeState] = useState<Theme>('light');
+
   useEffect(() => {
     if (typeof document !== 'undefined') {
       const root = document.documentElement;
-      root.classList.add('dark');
-      root.setAttribute('data-theme', 'dark');
-      root.style.colorScheme = 'dark';
+      root.classList.remove('dark');
+      root.setAttribute('data-theme', 'light');
+      root.style.colorScheme = 'light';
     }
   }, []);
 
+  const toggleTheme = () => {
+    setThemeState((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
+
+  const setTheme = (t: Theme) => {
+    setThemeState(t);
+  };
+
   const value: ThemeContextType = {
-    theme: 'dark',
-    isDark: true,
-    toggleTheme: () => {},
-    setTheme: () => {},
+    theme,
+    isDark: theme === 'dark',
+    toggleTheme,
+    setTheme,
   };
 
   return (
@@ -38,11 +48,12 @@ export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext);
   if (!context) {
     return {
-      theme: 'dark',
-      isDark: true,
+      theme: 'light',
+      isDark: false,
       toggleTheme: () => {},
       setTheme: () => {},
     };
   }
   return context;
 };
+

@@ -6,18 +6,18 @@ export const ProcurementPage: React.FC = () => {
   const { t, navigate } = useLanguage();
 
   return (
-    <div className="bg-[#0E1015] text-[#D9DBDE]">
+    <div className="bg-[#F3F2EE] text-[#111318]">
       {/* Header Banner */}
-      <section className="border-b border-[#25282E] bg-[#111318] py-16 lg:py-20">
+      <section className="border-b border-[#D8D8D5] bg-[#FFFFFF] py-14 lg:py-18">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl space-y-4">
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A21A8D] block">
+          <div className="max-w-3xl space-y-3">
+            <span className="text-[11px] font-mono font-semibold tracking-[0.2em] text-[#A21A8D] uppercase block">
               {t.procurement.headerBadge}
             </span>
-            <h1 className="text-3xl sm:text-5xl font-serif font-normal text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-serif font-normal text-[#111318] leading-tight">
               {t.procurement.headerTitle}
             </h1>
-            <p className="text-base text-[#A0A5AD] leading-relaxed">
+            <p className="text-base text-[#71747A] leading-relaxed">
               {t.procurement.headerLead}
             </p>
           </div>
@@ -25,29 +25,29 @@ export const ProcurementPage: React.FC = () => {
       </section>
 
       {/* Sourcing Narrative & Image */}
-      <section className="py-16 lg:py-24 border-b border-[#25282E]">
+      <section className="py-16 lg:py-24 border-b border-[#D8D8D5] bg-[#F3F2EE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <h2 className="text-2xl sm:text-3xl font-serif text-white">
+              <h2 className="text-2xl sm:text-3xl font-serif text-[#111318]">
                 {t.procurement.channelTitle}
               </h2>
-              <p className="text-sm sm:text-base text-[#D9DBDE] leading-relaxed">
+              <p className="text-sm sm:text-base text-[#111318] leading-relaxed">
                 {t.procurement.channelDesc1}
               </p>
-              <p className="text-sm text-[#A0A5AD] leading-relaxed">
+              <p className="text-sm text-[#71747A] leading-relaxed">
                 {t.procurement.channelDesc2}
               </p>
 
               <div className="border-l-2 border-[#A21A8D] pl-4 py-1">
-                <p className="text-xs font-semibold text-white uppercase tracking-wide">
+                <p className="text-xs font-semibold text-[#111318] uppercase tracking-wide">
                   {t.procurement.sourcingPledge}
                 </p>
               </div>
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative aspect-[4/3] rounded-[2px] overflow-hidden border border-[#25282E] bg-[#1A1D24]">
+              <div className="relative aspect-[4/3] rounded-[2px] overflow-hidden border border-[#D8D8D5] bg-[#FFFFFF]">
                 <img
                   src="/assets/akglobal/categories/procurement-sourcing.jpg"
                   alt="Industrial procurement and consolidation warehouse"
@@ -70,73 +70,73 @@ export const ProcurementPage: React.FC = () => {
       </section>
 
       {/* 4-Step Process: How Procurement Operates */}
-      <section className="py-16 lg:py-24 border-b border-[#25282E] bg-[#111318]">
+      <section className="py-16 lg:py-24 border-b border-[#D8D8D5] bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="max-w-2xl mb-16">
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A21A8D] block mb-2">
+          <div className="max-w-2xl mb-14">
+            <span className="text-[11px] font-mono font-semibold tracking-[0.2em] text-[#A21A8D] block mb-2 uppercase">
               Operational Workflow
             </span>
-            <h2 className="text-2xl sm:text-3xl font-serif text-white">
+            <h2 className="text-2xl sm:text-3xl font-serif text-[#111318]">
               {t.procurement.stepsTitle}
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Step 1 */}
-            <div className="border border-[#25282E] p-6 rounded-[2px] bg-[#14161C] flex flex-col justify-between">
+            <div className="border border-[#D8D8D5] p-6 rounded-[2px] bg-[#F3F2EE] flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-[10px] font-mono font-bold text-[#A21A8D] block">
                   STEP 01
                 </span>
-                <h3 className="text-base font-serif text-white">
+                <h3 className="text-base font-serif text-[#111318]">
                   {t.procurement.step1Title}
                 </h3>
-                <p className="text-xs text-[#A0A5AD] leading-relaxed">
+                <p className="text-xs text-[#71747A] leading-relaxed">
                   {t.procurement.step1Desc}
                 </p>
               </div>
             </div>
 
             {/* Step 2 */}
-            <div className="border border-[#25282E] p-6 rounded-[2px] bg-[#14161C] flex flex-col justify-between">
+            <div className="border border-[#D8D8D5] p-6 rounded-[2px] bg-[#F3F2EE] flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-[10px] font-mono font-bold text-[#A21A8D] block">
                   STEP 02
                 </span>
-                <h3 className="text-base font-serif text-white">
+                <h3 className="text-base font-serif text-[#111318]">
                   {t.procurement.step2Title}
                 </h3>
-                <p className="text-xs text-[#A0A5AD] leading-relaxed">
+                <p className="text-xs text-[#71747A] leading-relaxed">
                   {t.procurement.step2Desc}
                 </p>
               </div>
             </div>
 
             {/* Step 3 */}
-            <div className="border border-[#25282E] p-6 rounded-[2px] bg-[#14161C] flex flex-col justify-between">
+            <div className="border border-[#D8D8D5] p-6 rounded-[2px] bg-[#F3F2EE] flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-[10px] font-mono font-bold text-[#A21A8D] block">
                   STEP 03
                 </span>
-                <h3 className="text-base font-serif text-white">
+                <h3 className="text-base font-serif text-[#111318]">
                   {t.procurement.step3Title}
                 </h3>
-                <p className="text-xs text-[#A0A5AD] leading-relaxed">
+                <p className="text-xs text-[#71747A] leading-relaxed">
                   {t.procurement.step3Desc}
                 </p>
               </div>
             </div>
 
             {/* Step 4 */}
-            <div className="border border-[#25282E] p-6 rounded-[2px] bg-[#14161C] flex flex-col justify-between">
+            <div className="border border-[#D8D8D5] p-6 rounded-[2px] bg-[#F3F2EE] flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-[10px] font-mono font-bold text-[#A21A8D] block">
                   STEP 04
                 </span>
-                <h3 className="text-base font-serif text-white">
+                <h3 className="text-base font-serif text-[#111318]">
                   {t.procurement.step4Title}
                 </h3>
-                <p className="text-xs text-[#A0A5AD] leading-relaxed">
+                <p className="text-xs text-[#71747A] leading-relaxed">
                   {t.procurement.step4Desc}
                 </p>
               </div>
@@ -146,13 +146,13 @@ export const ProcurementPage: React.FC = () => {
       </section>
 
       {/* CTA Box */}
-      <section className="py-16 bg-[#0E1015] text-white border-t border-[#25282E]">
+      <section className="py-16 bg-[#111318] text-white border-b border-[#25282E]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-2">
             <h3 className="text-2xl font-serif">
               {t.procurement.readyTitle}
             </h3>
-            <p className="text-xs text-[#A0A5AD]">
+            <p className="text-xs text-[#D8D8D5]/80">
               {t.procurement.readySubtitle}
             </p>
           </div>

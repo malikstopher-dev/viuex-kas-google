@@ -49,18 +49,18 @@ export const IndustriesPage: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#0E1015] text-[#D9DBDE]">
+    <div className="bg-[#F3F2EE] text-[#111318]">
       {/* Header Banner */}
-      <section className="border-b border-[#25282E] bg-[#111318] py-16 lg:py-20">
+      <section className="border-b border-[#D8D8D5] bg-[#FFFFFF] py-14 lg:py-18">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl space-y-4">
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A21A8D] block">
+          <div className="max-w-3xl space-y-3">
+            <span className="text-[11px] font-mono font-semibold tracking-[0.2em] text-[#A21A8D] uppercase block">
               {t.industries.headerBadge}
             </span>
-            <h1 className="text-3xl sm:text-5xl font-serif font-normal text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-serif font-normal text-[#111318] leading-tight">
               {t.industries.headerTitle}
             </h1>
-            <p className="text-base text-[#A0A5AD] leading-relaxed">
+            <p className="text-base text-[#71747A] leading-relaxed">
               {t.industries.headerLead}
             </p>
           </div>
@@ -68,8 +68,8 @@ export const IndustriesPage: React.FC = () => {
       </section>
 
       {/* Industry Sector Cards */}
-      <section className="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="py-14 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {industries.map((ind) => {
             const Icon = ind.icon;
             const title = language === 'fr' ? ind.titleFr : ind.titleEn;
@@ -78,24 +78,24 @@ export const IndustriesPage: React.FC = () => {
             return (
               <div
                 key={ind.id}
-                className="bg-[#14161C] border border-[#25282E] p-8 rounded-[2px] flex flex-col justify-between hover:border-white/30 transition-colors"
+                className="bg-[#FFFFFF] border border-[#D8D8D5] p-8 rounded-[2px] flex flex-col justify-between hover:border-[#111318] transition-colors"
               >
                 <div className="space-y-4">
-                  <div className="w-10 h-10 bg-[#0E1015] border border-[#25282E] text-[#A21A8D] rounded-[2px] flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#F3F2EE] border border-[#D8D8D5] text-[#A21A8D] rounded-[2px] flex items-center justify-center">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-xl font-serif text-white">
+                  <h3 className="text-xl font-serif text-[#111318]">
                     {title}
                   </h3>
-                  <p className="text-xs text-[#A0A5AD] leading-relaxed">
+                  <p className="text-xs text-[#71747A] leading-relaxed">
                     {desc}
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-[#25282E] mt-6">
+                <div className="pt-6 border-t border-[#D8D8D5] mt-6">
                   <button
                     onClick={() => navigate('rfq')}
-                    className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-[#A21A8D] hover:text-white group cursor-pointer transition-colors"
+                    className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-[#111318] hover:text-[#A21A8D] group cursor-pointer transition-colors"
                   >
                     <span>{t.nav.rfq}</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -108,13 +108,13 @@ export const IndustriesPage: React.FC = () => {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-16 bg-[#111318] text-white border-t border-[#25282E]">
+      <section className="py-16 bg-[#111318] text-white border-b border-[#25282E]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-2">
             <h3 className="text-2xl font-serif">
               {t.industries.customIndustryTitle}
             </h3>
-            <p className="text-xs text-[#A0A5AD]">
+            <p className="text-xs text-[#D8D8D5]/80">
               {t.industries.customIndustryDesc}
             </p>
           </div>

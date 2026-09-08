@@ -178,30 +178,30 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
   };
 
   return (
-    <div className="bg-[#0E1015] text-[#D9DBDE]">
+    <div className="bg-[#F3F2EE] text-[#111318]">
       {/* Header Banner */}
-      <section className="border-b border-[#25282E] bg-[#111318] py-14 lg:py-18">
+      <section className="border-b border-[#D8D8D5] bg-[#FFFFFF] py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl space-y-3">
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A21A8D] block">
+            <span className="text-[11px] font-mono font-semibold tracking-[0.2em] text-[#A21A8D] uppercase block">
               {t.products.headerBadge}
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-white font-normal">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#111318] font-normal">
               {t.products.headerTitle}
             </h1>
-            <p className="text-sm sm:text-base text-[#A0A5AD] leading-relaxed">
+            <p className="text-sm sm:text-base text-[#71747A] leading-relaxed">
               {t.products.headerSubtitle}
             </p>
           </div>
 
           {/* Category Filter Tabs */}
-          <div className="flex flex-wrap gap-2 pt-8 border-t border-[#25282E] mt-8">
+          <div className="flex flex-wrap gap-2 pt-8 border-t border-[#D8D8D5] mt-8">
             <button
               onClick={() => setActiveCategory('all')}
               className={`px-5 py-2.5 rounded-[2px] text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
                 activeCategory === 'all'
-                  ? 'bg-[#A21A8D] text-white border border-[#A21A8D]'
-                  : 'bg-[#14161C] text-[#A0A5AD] border border-[#25282E] hover:border-white/40 hover:text-white'
+                  ? 'bg-[#111318] text-white border border-[#111318]'
+                  : 'bg-[#FFFFFF] text-[#71747A] border border-[#D8D8D5] hover:border-[#111318] hover:text-[#111318]'
               }`}
             >
               {t.products.allCategories}
@@ -210,8 +210,8 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
               onClick={() => setActiveCategory('lifting')}
               className={`px-5 py-2.5 rounded-[2px] text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
                 activeCategory === 'lifting'
-                  ? 'bg-[#A21A8D] text-white border border-[#A21A8D]'
-                  : 'bg-[#14161C] text-[#A0A5AD] border border-[#25282E] hover:border-white/40 hover:text-white'
+                  ? 'bg-[#111318] text-white border border-[#111318]'
+                  : 'bg-[#FFFFFF] text-[#71747A] border border-[#D8D8D5] hover:border-[#111318] hover:text-[#111318]'
               }`}
             >
               {t.categories.lifting.title}
@@ -220,8 +220,8 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
               onClick={() => setActiveCategory('fasteners')}
               className={`px-5 py-2.5 rounded-[2px] text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
                 activeCategory === 'fasteners'
-                  ? 'bg-[#A21A8D] text-white border border-[#A21A8D]'
-                  : 'bg-[#14161C] text-[#A0A5AD] border border-[#25282E] hover:border-white/40 hover:text-white'
+                  ? 'bg-[#111318] text-white border border-[#111318]'
+                  : 'bg-[#FFFFFF] text-[#71747A] border border-[#D8D8D5] hover:border-[#111318] hover:text-[#111318]'
               }`}
             >
               {t.categories.fasteners.title}
@@ -230,8 +230,8 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
               onClick={() => setActiveCategory('hardware')}
               className={`px-5 py-2.5 rounded-[2px] text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
                 activeCategory === 'hardware'
-                  ? 'bg-[#A21A8D] text-white border border-[#A21A8D]'
-                  : 'bg-[#14161C] text-[#A0A5AD] border border-[#25282E] hover:border-white/40 hover:text-white'
+                  ? 'bg-[#111318] text-white border border-[#111318]'
+                  : 'bg-[#FFFFFF] text-[#71747A] border border-[#D8D8D5] hover:border-[#111318] hover:text-[#111318]'
               }`}
             >
               {t.categories.hardware.title}
@@ -241,19 +241,19 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
       </section>
 
       {/* Product List / Spec Cards */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="space-y-6">
+      <section className="py-14 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="space-y-4">
           {filteredProducts.map((product) => {
             const isAdded = addedIds[product.id];
             return (
               <div
                 key={product.id}
-                className="bg-[#14161C] border border-[#25282E] rounded-[2px] p-6 lg:p-8 hover:border-white/30 transition-colors"
+                className="bg-[#FFFFFF] border border-[#D8D8D5] rounded-[2px] p-6 lg:p-8 hover:border-[#111318] transition-colors"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   {/* Product Visual */}
                   <div className="lg:col-span-3">
-                    <div className="aspect-[4/3] rounded-[2px] overflow-hidden border border-[#25282E] bg-[#1A1D24]">
+                    <div className="aspect-[4/3] rounded-[2px] overflow-hidden border border-[#D8D8D5] bg-[#F3F2EE]">
                       <img
                         src={product.image}
                         alt={language === 'fr' ? product.nameFr : product.nameEn}
@@ -269,34 +269,34 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
                       <span className="text-[10px] font-mono tracking-widest text-[#A21A8D] uppercase font-semibold">
                         {product.category}
                       </span>
-                      <span className="text-[#25282E]">•</span>
-                      <span className="text-[10px] font-mono text-[#A0A5AD]">
+                      <span className="text-[#D8D8D5]">•</span>
+                      <span className="text-[10px] font-mono text-[#71747A]">
                         {product.standards}
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-serif text-white font-normal">
+                    <h3 className="text-xl font-serif text-[#111318] font-normal">
                       {language === 'fr' ? product.nameFr : product.nameEn}
                     </h3>
 
-                    <p className="text-xs text-[#A0A5AD] leading-relaxed">
+                    <p className="text-xs text-[#71747A] leading-relaxed">
                       {language === 'fr' ? product.specFr : product.specEn}
                     </p>
 
-                    <div className="pt-2 text-xs text-[#D9DBDE] flex items-center space-x-2">
-                      <strong className="font-semibold text-white">{t.products.scopeRange}:</strong>
-                      <span>{language === 'fr' ? product.capacitiesFr : product.capacitiesEn}</span>
+                    <div className="pt-2 text-xs text-[#111318] flex items-center space-x-2">
+                      <strong className="font-semibold text-[#111318]">{t.products.scopeRange}:</strong>
+                      <span className="text-[#71747A]">{language === 'fr' ? product.capacitiesFr : product.capacitiesEn}</span>
                     </div>
                   </div>
 
                   {/* Action Column (3 cols) */}
-                  <div className="lg:col-span-3 flex flex-col justify-center items-start lg:items-end space-y-3 pt-4 lg:pt-0 border-t lg:border-t-0 border-[#25282E]">
+                  <div className="lg:col-span-3 flex flex-col justify-center items-start lg:items-end space-y-3 pt-4 lg:pt-0 border-t lg:border-t-0 border-[#D8D8D5]">
                     <button
                       onClick={() => handleAddToRfq(product)}
                       className={`w-full lg:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-[2px] text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer border ${
                         isAdded
                           ? 'bg-emerald-800 border-emerald-700 text-white'
-                          : 'bg-[#A21A8D] hover:bg-[#871375] border-[#A21A8D] text-white'
+                          : 'bg-[#111318] hover:bg-[#25282E] active:bg-black border-[#111318] text-white'
                       }`}
                     >
                       {isAdded ? (
@@ -312,7 +312,7 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
                       )}
                     </button>
 
-                    <span className="text-[11px] text-[#A0A5AD]">
+                    <span className="text-[11px] text-[#71747A]">
                       {t.products.rfqNotice}
                     </span>
                   </div>
@@ -323,7 +323,7 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
         </div>
 
         {/* Custom Sourcing Callout for Unlisted Products */}
-        <div className="mt-16 bg-[#14161C] text-white p-8 lg:p-12 rounded-[2px] border border-[#25282E] flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="mt-14 bg-[#111318] text-white p-8 lg:p-12 rounded-[2px] border border-[#25282E] flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-2 max-w-2xl">
             <span className="text-[10px] font-mono tracking-widest text-[#A21A8D] uppercase block">
               Specialized Procurement
@@ -331,16 +331,16 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
             <h3 className="text-2xl font-serif">
               {t.products.customItemTitle}
             </h3>
-            <p className="text-xs text-[#D9DBDE]/80 leading-relaxed">
+            <p className="text-xs text-[#D8D8D5]/80 leading-relaxed">
               {t.products.customItemDesc}
             </p>
           </div>
 
           <button
             onClick={() => navigate('rfq')}
-            className="inline-flex items-center space-x-2 bg-white text-[#111318] hover:bg-[#F7F7F5] px-6 py-3.5 rounded-[2px] text-xs font-semibold tracking-widest uppercase transition-colors cursor-pointer shrink-0"
+            className="inline-flex items-center space-x-2 bg-[#A21A8D] text-white hover:bg-[#871375] px-6 py-3.5 rounded-[2px] text-xs font-semibold tracking-widest uppercase transition-colors cursor-pointer shrink-0"
           >
-            <FileText className="w-4 h-4 text-[#A21A8D]" />
+            <FileText className="w-4 h-4 text-white" />
             <span>{t.products.requestCustomQuote}</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>

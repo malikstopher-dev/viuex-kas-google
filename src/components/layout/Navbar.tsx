@@ -16,7 +16,7 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -39,12 +39,12 @@ export const Navbar: React.FC = () => {
     <header
       className={`sticky top-0 z-40 transition-all duration-200 ${
         isScrolled
-          ? 'bg-[#111318]/95 backdrop-blur-md shadow-md border-b border-[#25282E] py-3'
-          : 'bg-[#111318] border-b border-[#25282E] py-4'
+          ? 'bg-[#FFFFFF]/96 backdrop-blur-sm border-b border-[#D8D8D5] py-3 shadow-[0_1px_3px_rgba(0,0,0,0.04)]'
+          : 'bg-[#FFFFFF] border-b border-[#D8D8D5] py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-        {/* Official Brand Logo (Enlarged by ~20-25% on desktop) */}
+        {/* Official Brand Logo */}
         <button
           onClick={() => handleNavClick('home')}
           className="flex items-center text-left focus:outline-none group cursor-pointer"
@@ -52,16 +52,16 @@ export const Navbar: React.FC = () => {
         >
           {/* Desktop Logo */}
           <div className="hidden sm:block">
-            <Logo variant="dark" size="md" />
+            <Logo variant="light" size="md" />
           </div>
           {/* Mobile Logo */}
           <div className="sm:hidden">
-            <Logo variant="dark" size="sm" />
+            <Logo variant="light" size="sm" />
           </div>
         </button>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-7" aria-label="Main Navigation">
+        <nav className="hidden lg:flex items-center space-x-8" aria-label="Main Navigation">
           {navLinks.map((link) => {
             const isActive =
               currentRouteId === link.id ||
@@ -72,13 +72,13 @@ export const Navbar: React.FC = () => {
                 onClick={() => handleNavClick(link.id)}
                 className={`relative py-1 text-[12px] font-medium tracking-[0.08em] uppercase transition-colors cursor-pointer ${
                   isActive
-                    ? 'text-white'
-                    : 'text-[#D9DBDE]/75 hover:text-white'
+                    ? 'text-[#111318] font-semibold'
+                    : 'text-[#71747A] hover:text-[#111318]'
                 }`}
               >
                 <span>{link.label}</span>
                 {isActive && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#A21A8D]" />
+                  <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-[#A21A8D]" />
                 )}
               </button>
             );
@@ -88,25 +88,25 @@ export const Navbar: React.FC = () => {
         {/* Desktop Action Area: EN | FR + Request a Quote */}
         <div className="hidden sm:flex items-center space-x-4">
           {/* Language Selector (EN | FR) */}
-          <div className="flex items-center text-xs font-semibold tracking-wider border border-[#25282E] rounded-[2px] p-0.5 bg-[#14161C]">
+          <div className="flex items-center text-xs font-semibold tracking-wider border border-[#D8D8D5] rounded-[2px] p-0.5 bg-[#F3F2EE]">
             <button
               onClick={() => setLanguage('en')}
-              className={`px-2.5 py-1 rounded-[2px] transition-colors cursor-pointer ${
+              className={`px-2.5 py-1 rounded-[2px] transition-colors cursor-pointer text-[11px] font-bold ${
                 language === 'en'
-                  ? 'bg-white text-[#111318]'
-                  : 'text-[#A0A5AD] hover:text-white'
+                  ? 'bg-[#111318] text-white'
+                  : 'text-[#71747A] hover:text-[#111318]'
               }`}
               aria-label="Switch to English"
             >
               EN
             </button>
-            <span className="text-[#25282E] px-0.5">|</span>
+            <span className="text-[#D8D8D5] px-0.5">|</span>
             <button
               onClick={() => setLanguage('fr')}
-              className={`px-2.5 py-1 rounded-[2px] transition-colors cursor-pointer ${
+              className={`px-2.5 py-1 rounded-[2px] transition-colors cursor-pointer text-[11px] font-bold ${
                 language === 'fr'
-                  ? 'bg-white text-[#111318]'
-                  : 'text-[#A0A5AD] hover:text-white'
+                  ? 'bg-[#111318] text-white'
+                  : 'text-[#71747A] hover:text-[#111318]'
               }`}
               aria-label="Passer au Français"
             >
@@ -114,18 +114,18 @@ export const Navbar: React.FC = () => {
             </button>
           </div>
 
-          {/* Request a Quote Button - 2px corner radius, restrained magenta */}
+          {/* Request a Quote Button - Institutional dark button with fine 2px radius and subtle magenta detail */}
           <button
             onClick={() => handleNavClick('rfq')}
-            className="relative inline-flex items-center space-x-2 bg-[#A21A8D] hover:bg-[#871375] text-white text-xs font-semibold tracking-widest uppercase px-4.5 py-2.5 rounded-[2px] transition-colors border border-[#A21A8D] cursor-pointer shadow-xs group"
+            className="relative inline-flex items-center space-x-2 bg-[#111318] hover:bg-[#25282E] text-white text-xs font-semibold tracking-widest uppercase px-4.5 py-2.5 rounded-[2px] transition-colors border border-[#111318] cursor-pointer group"
           >
-            <FileText className="w-3.5 h-3.5 text-white" />
+            <FileText className="w-3.5 h-3.5 text-white/90" />
             <span>{t.nav.rfq}</span>
-            <ArrowRight className="w-3.5 h-3.5 text-white/70 group-hover:translate-x-0.5 transition-transform" />
+            <ArrowRight className="w-3.5 h-3.5 text-white/70 group-hover:translate-x-1 transition-transform" />
 
             {/* Active Items Badge */}
             {activeItemsCount > 0 && (
-              <span className="absolute -top-2 -right-2 bg-white text-[#111318] text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#111318]">
+              <span className="absolute -top-1.5 -right-1.5 bg-[#A21A8D] text-white text-[10px] font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white">
                 {activeItemsCount}
               </span>
             )}
@@ -134,13 +134,13 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Right Controls: Compact EN/FR + RFQ Icon + Hamburger */}
         <div className="flex items-center space-x-2 sm:hidden">
-          <div className="flex items-center text-[11px] font-bold border border-[#25282E] rounded-[2px] bg-[#14161C]">
+          <div className="flex items-center text-[11px] font-bold border border-[#D8D8D5] rounded-[2px] bg-[#F3F2EE]">
             <button
               onClick={() => setLanguage('en')}
               className={`px-2 py-1 ${
                 language === 'en'
-                  ? 'bg-white text-[#111318]'
-                  : 'text-[#A0A5AD]'
+                  ? 'bg-[#111318] text-white'
+                  : 'text-[#71747A]'
               }`}
             >
               EN
@@ -149,8 +149,8 @@ export const Navbar: React.FC = () => {
               onClick={() => setLanguage('fr')}
               className={`px-2 py-1 ${
                 language === 'fr'
-                  ? 'bg-white text-[#111318]'
-                  : 'text-[#A0A5AD]'
+                  ? 'bg-[#111318] text-white'
+                  : 'text-[#71747A]'
               }`}
             >
               FR
@@ -159,7 +159,7 @@ export const Navbar: React.FC = () => {
 
           <button
             onClick={() => handleNavClick('rfq')}
-            className="relative p-2 text-white border border-[#25282E] rounded-[2px] bg-[#14161C]"
+            className="relative p-2 text-[#111318] border border-[#D8D8D5] rounded-[2px] bg-[#FFFFFF]"
             aria-label={t.nav.rfq}
           >
             <FileText className="w-4 h-4 text-[#A21A8D]" />
@@ -172,7 +172,7 @@ export const Navbar: React.FC = () => {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-white hover:text-[#A21A8D] border border-[#25282E] rounded-[2px] bg-[#14161C] transition-colors"
+            className="p-2 text-[#111318] hover:text-[#A21A8D] border border-[#D8D8D5] rounded-[2px] bg-[#FFFFFF] transition-colors"
             aria-label="Toggle mobile menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -182,7 +182,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-[#25282E] bg-[#111318] px-6 py-6 space-y-4 shadow-lg animate-in fade-in slide-in-from-top-2 duration-150">
+        <div className="lg:hidden border-t border-[#D8D8D5] bg-[#FFFFFF] px-6 py-6 space-y-4 shadow-md animate-in fade-in slide-in-from-top-2 duration-150">
           <div className="space-y-1">
             {navLinks.map((link) => {
               const isActive = currentRouteId === link.id;
@@ -192,8 +192,8 @@ export const Navbar: React.FC = () => {
                   onClick={() => handleNavClick(link.id)}
                   className={`w-full text-left py-3 px-3 rounded-[2px] text-xs font-semibold tracking-wider uppercase flex items-center justify-between transition-colors ${
                     isActive
-                      ? 'bg-[#1A1D24] text-white'
-                      : 'text-[#D9DBDE] hover:bg-white/5'
+                      ? 'bg-[#F3F2EE] text-[#111318] font-bold'
+                      : 'text-[#71747A] hover:bg-[#F3F2EE] hover:text-[#111318]'
                   }`}
                 >
                   <span>{link.label}</span>
@@ -203,15 +203,15 @@ export const Navbar: React.FC = () => {
             })}
           </div>
 
-          <div className="pt-3 border-t border-[#25282E]">
+          <div className="pt-3 border-t border-[#D8D8D5]">
             <button
               onClick={() => handleNavClick('rfq')}
-              className="w-full py-3 bg-[#A21A8D] hover:bg-[#871375] text-white rounded-[2px] text-xs font-semibold tracking-widest uppercase flex items-center justify-center space-x-2 transition-colors cursor-pointer"
+              className="w-full py-3 bg-[#111318] hover:bg-[#25282E] text-white rounded-[2px] text-xs font-semibold tracking-widest uppercase flex items-center justify-center space-x-2 transition-colors cursor-pointer"
             >
               <FileText className="w-4 h-4 text-white" />
               <span>{t.nav.rfq}</span>
               {activeItemsCount > 0 && (
-                <span className="bg-white text-[#111318] px-2 py-0.5 rounded-full text-[10px] font-bold ml-1">
+                <span className="bg-[#A21A8D] text-white px-2 py-0.5 rounded-full text-[10px] font-bold ml-1">
                   {activeItemsCount}
                 </span>
               )}
@@ -222,3 +222,4 @@ export const Navbar: React.FC = () => {
     </header>
   );
 };
+
