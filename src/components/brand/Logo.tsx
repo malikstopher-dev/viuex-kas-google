@@ -17,12 +17,12 @@ export const Logo: React.FC<LogoProps> = ({
   const letterColor = isDark ? '#FFFFFF' : '#111318';
   const subtextColor = isDark ? '#A0A5AD' : '#666B73';
 
-  // Dimension scaling
+  // Dimension scaling (increased by ~20-25% for commanding desktop presence)
   const heightMap = {
-    sm: isSymbolOnly ? 28 : 34,
-    md: isSymbolOnly ? 36 : 46,
-    lg: isSymbolOnly ? 48 : 62,
-    hero: isSymbolOnly ? 64 : 84,
+    sm: isSymbolOnly ? 30 : 38,
+    md: isSymbolOnly ? 44 : 56,
+    lg: isSymbolOnly ? 56 : 74,
+    hero: isSymbolOnly ? 72 : 96,
   };
 
   const h = heightMap[size];

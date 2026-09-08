@@ -1,9 +1,9 @@
 import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { ArrowRight, Hammer, Building, Wrench, Truck, Factory, ShieldAlert } from 'lucide-react';
+import { ArrowRight, Hammer, Building, Wrench, Truck, Factory } from 'lucide-react';
 
 export const IndustriesPage: React.FC = () => {
-  const { t, navigate } = useLanguage();
+  const { language, t, navigate } = useLanguage();
 
   const industries = [
     {
@@ -26,8 +26,8 @@ export const IndustriesPage: React.FC = () => {
       id: 'fabrication',
       titleEn: 'Steel Fabrication & Heavy Engineering',
       titleFr: 'Chaudronnerie & Construction Métallique',
-      descEn: 'Workshop magnetic base drills, industrial grinding and cutting consumables, manual chain blocks, and certified rigging hardware for heavy steel assembly shops.',
-      descFr: 'Perceuses magnétiques d’atelier, abrasifs et consommables industriels, palans à chaîne et matériel de gréage certifié pour ateliers de chaudronnerie lourde.',
+      descEn: 'Workshop magnetic base drills, industrial grinding and cutting consumables, manual chain blocks, and industrial rigging hardware for heavy steel assembly shops.',
+      descFr: 'Perceuses magnétiques d’atelier, abrasifs et consommables industriels, palans à chaîne et matériel de gréage industriel pour ateliers de chaudronnerie lourde.',
       icon: Hammer,
     },
     {
@@ -49,18 +49,18 @@ export const IndustriesPage: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#F7F7F5] text-[#111318]">
+    <div className="bg-[#0E1015] text-[#D9DBDE]">
       {/* Header Banner */}
-      <section className="border-b border-[#D9DBDE] bg-white py-16 lg:py-20">
+      <section className="border-b border-[#25282E] bg-[#111318] py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl space-y-4">
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#A21A8D] block">
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A21A8D] block">
               {t.industries.headerBadge}
             </span>
-            <h1 className="text-3xl sm:text-5xl font-serif font-normal text-[#111318] leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-serif font-normal text-white leading-tight">
               {t.industries.headerTitle}
             </h1>
-            <p className="text-base text-[#666B73] leading-relaxed">
+            <p className="text-base text-[#A0A5AD] leading-relaxed">
               {t.industries.headerLead}
             </p>
           </div>
@@ -70,32 +70,35 @@ export const IndustriesPage: React.FC = () => {
       {/* Industry Sector Cards */}
       <section className="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {industries.map((ind, idx) => {
+          {industries.map((ind) => {
             const Icon = ind.icon;
+            const title = language === 'fr' ? ind.titleFr : ind.titleEn;
+            const desc = language === 'fr' ? ind.descFr : ind.descEn;
+
             return (
               <div
                 key={ind.id}
-                className="bg-white border border-[#D9DBDE] p-8 rounded-xs flex flex-col justify-between hover:border-[#111318] transition-colors"
+                className="bg-[#14161C] border border-[#25282E] p-8 rounded-[2px] flex flex-col justify-between hover:border-white/30 transition-colors"
               >
                 <div className="space-y-4">
-                  <div className="w-10 h-10 bg-[#111318] text-[#A21A8D] rounded-xs flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#0E1015] border border-[#25282E] text-[#A21A8D] rounded-[2px] flex items-center justify-center">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-xl font-serif text-[#111318]">
-                    {ind.titleEn}
+                  <h3 className="text-xl font-serif text-white">
+                    {title}
                   </h3>
-                  <p className="text-xs text-[#666B73] leading-relaxed">
-                    {ind.descEn}
+                  <p className="text-xs text-[#A0A5AD] leading-relaxed">
+                    {desc}
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-[#D9DBDE] mt-6">
+                <div className="pt-6 border-t border-[#25282E] mt-6">
                   <button
                     onClick={() => navigate('rfq')}
-                    className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-[#111318] hover:text-[#A21A8D] group cursor-pointer"
+                    className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-[#A21A8D] hover:text-white group cursor-pointer transition-colors"
                   >
                     <span>{t.nav.rfq}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#A21A8D] group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
               </div>
@@ -105,23 +108,23 @@ export const IndustriesPage: React.FC = () => {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-16 bg-[#111318] text-white">
+      <section className="py-16 bg-[#111318] text-white border-t border-[#25282E]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-2">
             <h3 className="text-2xl font-serif">
               {t.industries.customIndustryTitle}
             </h3>
-            <p className="text-xs text-[#D9DBDE]/70">
+            <p className="text-xs text-[#A0A5AD]">
               {t.industries.customIndustryDesc}
             </p>
           </div>
 
           <button
             onClick={() => navigate('rfq')}
-            className="inline-flex items-center space-x-2 bg-white text-[#111318] hover:bg-[#F7F7F5] px-7 py-3.5 rounded-xs text-xs font-semibold tracking-widest uppercase transition-colors cursor-pointer shrink-0"
+            className="inline-flex items-center space-x-2 bg-[#A21A8D] hover:bg-[#871375] text-white px-7 py-3.5 rounded-[2px] text-xs font-semibold tracking-widest uppercase transition-colors cursor-pointer shrink-0"
           >
             <span>{t.nav.rfq}</span>
-            <ArrowRight className="w-4 h-4 text-[#A21A8D]" />
+            <ArrowRight className="w-4 h-4 text-white" />
           </button>
         </div>
       </section>

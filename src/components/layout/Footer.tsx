@@ -1,13 +1,11 @@
 import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { useTheme } from '../../context/ThemeContext';
 import { Logo } from '../brand/Logo';
 import { RouteId } from '../../types';
-import { Phone, Mail, MapPin, ArrowRight, ShieldCheck, FileText, Sun, Moon } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowRight, ShieldCheck, FileText } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { language, setLanguage, navigate, t } = useLanguage();
-  const { isDark, toggleTheme } = useTheme();
 
   const handleNav = (routeId: RouteId) => {
     navigate(routeId);
@@ -33,15 +31,15 @@ export const Footer: React.FC = () => {
           <div className="flex flex-wrap items-center gap-4">
             <button
               onClick={() => handleNav('rfq')}
-              className="inline-flex items-center space-x-2 bg-white text-[#111318] hover:bg-[#F7F7F5] px-6 py-3 rounded-xs text-xs font-semibold tracking-widest uppercase transition-colors group cursor-pointer"
+              className="inline-flex items-center space-x-2 bg-[#A21A8D] text-white hover:bg-[#871375] px-6 py-3 rounded-[2px] text-xs font-semibold tracking-widest uppercase transition-colors group cursor-pointer border border-[#A21A8D]"
             >
-              <FileText className="w-4 h-4 text-[#A21A8D]" />
+              <FileText className="w-4 h-4 text-white" />
               <span>{t.nav.rfq}</span>
-              <ArrowRight className="w-3.5 h-3.5 text-black/50 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 text-white/70 group-hover:translate-x-0.5 transition-transform" />
             </button>
             <button
               onClick={() => handleNav('contact')}
-              className="inline-flex items-center space-x-2 border border-white/20 text-white hover:border-white/50 px-6 py-3 rounded-xs text-xs font-semibold tracking-widest uppercase transition-colors cursor-pointer"
+              className="inline-flex items-center space-x-2 border border-white/20 text-white hover:border-white/50 px-6 py-3 rounded-[2px] text-xs font-semibold tracking-widest uppercase transition-colors cursor-pointer"
             >
               <span>{t.nav.contact}</span>
             </button>
@@ -242,25 +240,7 @@ export const Footer: React.FC = () => {
           <div className="flex items-center space-x-6">
             <span>{t.footer.honestNotice}</span>
             <span className="text-white/20">•</span>
-            <span className="text-white/40">Sandton, Gauteng</span>
-            <span className="text-white/20">•</span>
-            <button
-              onClick={toggleTheme}
-              className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-xs bg-white/5 hover:bg-white/10 text-white/80 hover:text-white transition-colors cursor-pointer border border-white/10"
-              aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-              {isDark ? (
-                <>
-                  <Sun className="w-3 h-3 text-amber-400" />
-                  <span>{language === 'fr' ? 'Mode Clair' : 'Light Mode'}</span>
-                </>
-              ) : (
-                <>
-                  <Moon className="w-3 h-3 text-white/70" />
-                  <span>{language === 'fr' ? 'Mode Sombre' : 'Dark Mode'}</span>
-                </>
-              )}
-            </button>
+            <span className="text-white/40">Fourways, Sandton</span>
           </div>
         </div>
       </div>

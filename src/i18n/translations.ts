@@ -126,7 +126,7 @@ export const translations = {
       "title": "Engineered For Demanding Industrial Demands",
       "section1": {
         "title": "Heavy Lifting & Rigging Solutions",
-        "desc": "Precision manual chain hoists, lever ratchet blocks, certified high-tensile alloy lifting chains, and forged rigging hardware designed for continuous operational safety.",
+        "desc": "Precision manual chain hoists, lever ratchet blocks, high-tensile alloy lifting chains, and forged rigging hardware designed for continuous operational safety.",
         "cta": "View Lifting Range"
       },
       "section2": {
@@ -269,7 +269,7 @@ export const translations = {
       "sectors": [
         {
           "title": "Mining & Mining Support",
-          "desc": "Reliable supply of certified lifting gear, heavy bolting, and maintenance hardware compatible with ore processing plants, transport links, and site infrastructure."
+          "desc": "Reliable supply of heavy lifting gear, heavy bolting, and maintenance hardware compatible with ore processing plants, transport links, and site infrastructure."
         },
         {
           "title": "Engineering & Fabrication",
@@ -405,17 +405,17 @@ export const translations = {
       "viewCategory": "View Category Range"
     },
     "homepage": {
-      "heroBadge": "SOUTH AFRICA → DEMOCRATIC REPUBLIC OF THE CONGO",
-      "heroTitle": "INDUSTRIAL SUPPLY. SIMPLIFIED.",
-      "heroSubtitle": "AKGLOBAL TRADING PTY sources and supplies industrial equipment, lifting solutions, fasteners, and professional procurement services from South Africa to businesses locally and across the Democratic Republic of the Congo.",
-      "heroDescription": "Based in Sandton, South Africa. Serving businesses in South Africa and the Democratic Republic of the Congo with transparent commercial quotations and reliable dispatch.",
+      "heroBadge": "SOUTH AFRICA → DRC",
+      "heroTitle": "INDUSTRIAL SUPPLY. WITHOUT COMPROMISE.",
+      "heroSubtitle": "AKGLOBAL TRADING PTY supplies industrial equipment, lifting solutions, fasteners and professional procurement services to businesses in South Africa and the Democratic Republic of the Congo.",
+      "heroDescription": "AKGLOBAL TRADING PTY supplies industrial equipment, lifting solutions, fasteners and professional procurement services to businesses in South Africa and the Democratic Republic of the Congo.",
       "heroCta": "Request a Quote",
       "exploreProducts": "Explore Products",
       "corridorLabel": "SUPPLY ARCHITECTURE",
-      "corridorTitle": "South African Sourcing Base. Regional Industrial Supply.",
-      "corridorDesc": "Connecting client operations in South Africa and the DRC directly with verified South African industrial manufacturers and distributors.",
+      "corridorTitle": "Strategic Sourcing Base. Regional Industrial Supply.",
+      "corridorDesc": "Connecting client operations in South Africa and the DRC directly with South African industrial manufacturers and distributors.",
       "saBaseTitle": "Fourways, Sandton, South Africa",
-      "saBaseDesc": "Direct operational tapping into South Africa mature industrial manufacturing and distribution hub.",
+      "saBaseDesc": "Direct operational access to South Africa's mature industrial manufacturing and distribution hub.",
       "drcReachTitle": "South Africa & Democratic Republic of the Congo",
       "drcReachDesc": "Dedicated procurement coordination for mining, construction, and heavy industrial facilities across regional corridors.",
       "selectedSupplyTitle": "Selected Industrial Supply Areas",
@@ -432,7 +432,7 @@ export const translations = {
       "lifting": {
         "title": "Lifting Equipment",
         "shortDesc": "Manual chain blocks, lever hoists, rigging & crane accessories.",
-        "longDesc": "Precision manual chain hoists, lever ratchet blocks, certified high-tensile alloy lifting chains, and forged rigging hardware designed for continuous operational safety.",
+        "longDesc": "Precision manual chain hoists, lever ratchet blocks, high-tensile alloy lifting chains, and forged rigging hardware designed for continuous operational safety.",
         "items": [
           "Manual Chain Blocks (0.5T to 20T capacity)",
           "Lever Ratchet Hoists (0.75T to 9T capacity)",
@@ -469,7 +469,7 @@ export const translations = {
         ]
       },
       "procurement": {
-        "title": "Procurement & Sourcing",
+        "title": "Industrial Procurement",
         "shortDesc": "Custom RFQ sourcing, bill of quantities & cross-border logistics.",
         "longDesc": "Specialist procurement service for items outside standard stock lists, difficult-to-locate technical spares, or high-volume project deliveries.",
         "items": [
@@ -530,7 +530,7 @@ export const translations = {
       "step1Title": "01 / Requirement Submission",
       "step1Desc": "Submit your bill of materials, equipment specifications, drawings, or OEM part numbers.",
       "step2Title": "02 / Sourcing & Technical Validation",
-      "step2Desc": "We verify availability, material grades (e.g. Grade 8.8, Grade 80), and certification standards.",
+      "step2Desc": "We verify availability, material grades (e.g. Grade 8.8, Grade 80), and required technical specifications.",
       "step3Title": "03 / Formal Commercial Quotation",
       "step3Desc": "Receive an itemized quote detailing unit prices, packaging, payment terms, and lead times.",
       "step4Title": "04 / Dispatch & Delivery",
@@ -711,7 +711,7 @@ export const translations = {
         {
           "number": "02",
           "title": "Nous Sourçons & Vérifions",
-          "desc": "Notre équipe vérifie les normes techniques, les nuances d’acier et la disponibilité auprès des fabricants industriels sud-africains certifiés."
+          "desc": "Notre équipe vérifie les spécifications techniques, les nuances d’acier et la disponibilité auprès des fabricants et distributeurs industriels sud-africains."
         },
         {
           "number": "03",
@@ -730,7 +730,7 @@ export const translations = {
       "title": "Conçus Pour les Exigences Industrielles Sévères",
       "section1": {
         "title": "Solutions de Levage Lourd & Manutention",
-        "desc": "Palans manuels à chaîne de précision, palans à levier à rochet, chaînes de levage haute résistance certifiées et accessoires de gréement forgés pour une sécurité opérationnelle maximale.",
+        "desc": "Palans manuels à chaîne de précision, palans à levier à rochet, chaînes de levage haute résistance en alliage et accessoires de gréement forgés pour une sécurité opérationnelle maximale.",
         "cta": "Voir la Gamme Levage"
       },
       "section2": {
@@ -873,7 +873,7 @@ export const translations = {
       "sectors": [
         {
           "title": "Mines & Support Minier",
-          "desc": "Fourniture fiable de matériel de levage certifié, de boulonnerie lourde et de pièces d’entretien pour les usines de concentration, lignes de transport et chantiers miniers."
+          "desc": "Fourniture fiable de matériel de levage lourd, de boulonnerie industrielle et de pièces d’entretien pour les usines de concentration, lignes de transport et chantiers miniers."
         },
         {
           "title": "Ingénierie & Fabrication Métallique",
@@ -1009,19 +1009,19 @@ export const translations = {
       "viewCategory": "Voir la gamme"
     },
     "homepage": {
-      "heroBadge": "AFRIQUE DU SUD → RÉPUBLIQUE DÉMOCRATIQUE DU CONGO",
+      "heroBadge": "AFRIQUE DU SUD → RDC",
       "heroTitle": "FOURNITURE INDUSTRIELLE. SANS COMPROMIS.",
-      "heroSubtitle": "AKGLOBAL TRADING PTY fournit des équipements industriels, des solutions de levage, de la boulonnerie et des services d’approvisionnement professionnel depuis l’Afrique du Sud aux entreprises locales et en République démocratique du Congo.",
-      "heroDescription": "Basé à Sandton, Afrique du Sud. Au service des entreprises en Afrique du Sud et en République démocratique du Congo avec des devis clairs et des expéditions fiables.",
+      "heroSubtitle": "AKGLOBAL TRADING PTY fournit des équipements industriels, des solutions de levage, de la boulonnerie et des services d’approvisionnement professionnel aux entreprises en Afrique du Sud et en République démocratique du Congo.",
+      "heroDescription": "AKGLOBAL TRADING PTY fournit des équipements industriels, des solutions de levage, de la boulonnerie et des services d’approvisionnement professionnel aux entreprises en Afrique du Sud et en République démocratique du Congo.",
       "heroCta": "Demander un devis",
       "exploreProducts": "Explorer les produits",
       "corridorLabel": "CORRIDOR D’APPROVISIONNEMENT",
-      "corridorTitle": "Base Sourcing Stratégique. Fourniture Industrielle Régionale.",
-      "corridorDesc": "Raccorder les opérations en Afrique du Sud et en RDC directement aux fabricants et distributeurs industriels sud-africains certifiés.",
+      "corridorTitle": "Approvisionnement stratégique. Portée régionale.",
+      "corridorDesc": "Raccorder les opérations en Afrique du Sud et en RDC directement aux fabricants et distributeurs industriels sud-africains.",
       "saBaseTitle": "Fourways, Sandton, Afrique du Sud",
       "saBaseDesc": "Accès direct au premier pôle industriel et manufacturier d’Afrique australe.",
       "drcReachTitle": "Afrique du Sud & République Démocratique du Congo",
-      "drcReachDesc": "Approvisionnement et logistique structurés pour les secteurs miniers, industriels et d’infrastructures au Katanga et à Kinshasa.",
+      "drcReachDesc": "Approvisionnement et logistique structurés pour les secteurs miniers, industriels et d’infrastructures.",
       "selectedSupplyTitle": "Domaines de Fourniture Sélectionnés",
       "selectedSupplySubtitle": "Levage lourd, boulonnerie structurale et fournitures industrielles conçus pour une disponibilité opérationnelle continue.",
       "procurementQuote": "Transmettez-nous vos besoins. Nous évaluerons le sourcing et la disponibilité.",
@@ -1029,14 +1029,14 @@ export const translations = {
       "howProcurementWorks": "Processus d’approvisionnement",
       "ctaTitle": "Prêt à demander un devis formel ?",
       "ctaSubtitle": "Soumettez vos nomenclatures ou spécifications techniques. Notre équipe évaluera la disponibilité et établira un devis détaillé.",
-      "procurementTitle": "Services d’Approvisionnement",
+      "procurementTitle": "Approvisionnement Industriel",
       "procurementBody": "Sourcing consolidé depuis l’Afrique du Sud vers la RDC"
     },
     "categories": {
       "lifting": {
         "title": "Équipements de levage",
         "shortDesc": "Palans manuels à chaîne, palans à levier, élingues chaîne haute résistance & accessoires de gréage.",
-        "longDesc": "Solutions certifiées de levage manuel et d’arrimage pour les mines, ateliers, ponts roulants et charpentes métalliques.",
+        "longDesc": "Solutions fiables de levage manuel et d’arrimage pour les mines, ateliers, ponts roulants et charpentes métalliques.",
         "items": [
           "Palans manuels à chaîne (0,5T à 20T)",
           "Palans à levier à cliquet (0,75T à 9T)",
@@ -1047,7 +1047,7 @@ export const translations = {
         ]
       },
       "fasteners": {
-        "title": "Fixations & Boulonnerie",
+        "title": "Fixations & boulonnerie",
         "shortDesc": "Boulons hexagonaux Grade 8.8, tiges filetées, vis d’assemblage & revêtements anticorrosion.",
         "longDesc": "Boulonnerie structurale lourde et systèmes de fixation pour charpentes métalliques, mécanique et tuyauterie industrielle.",
         "items": [
@@ -1072,7 +1072,7 @@ export const translations = {
         ]
       },
       "procurement": {
-        "title": "Sourcing & Approvisionnement",
+        "title": "Approvisionnement industriel",
         "shortDesc": "Traitement sur mesure de devis, consolidation de nomenclatures & pièces spécifiques.",
         "longDesc": "Service spécialisé d’approvisionnement pour pièces hors catalogue, composants rares ou approvisionnements de projets volumineux.",
         "items": [
@@ -1110,7 +1110,7 @@ export const translations = {
     "products": {
       "headerBadge": "PROGRAMME DE PRODUITS",
       "headerTitle": "Portefeuille de Fournitures Industrielles",
-      "headerSubtitle": "Consultez nos catégories industrielles certifiées. Ajoutez des articles directement à votre devis pour une offre commerciale chiffrée.",
+      "headerSubtitle": "Consultez nos catégories industrielles. Ajoutez des articles directement à votre devis pour une offre commerciale chiffrée.",
       "allCategories": "Toutes les catégories",
       "scopeRange": "Spécifications & Capacités",
       "added": "Ajouté",
@@ -1126,7 +1126,7 @@ export const translations = {
       "headerTitle": "Sourcing Transfrontalier Dédié",
       "headerLead": "Conçu spécialement pour les opérations en Afrique du Sud et en RDC nécessitant un accès direct aux stocks industriels sud-africains.",
       "channelTitle": "Un Canal d’Approvisionnement Structuré",
-      "channelDesc1": "AKGLOBAL TRADING PTY regroupe vos besoins techniques multi-lignes en devis commerciaux unifiés. Nous mobilisons le réseau de fabricants d’Afrique du Sud pour vous fournir des équipements certifiés.",
+      "channelDesc1": "AKGLOBAL TRADING PTY regroupe vos besoins techniques multi-lignes en devis commerciaux unifiés. Nous mobilisons le réseau de fabricants et distributeurs d’Afrique du Sud pour vous fournir des équipements conformes à vos spécifications.",
       "channelDesc2": "De l’analyse initiale à la coordination du conditionnement et du départ en fret, nous assurons une exécution rigoureuse.",
       "sourcingPledge": "Transmettez-nous vos besoins et nous évaluerons le sourcing et la disponibilité.",
       "stepsTitle": "Processus d’Approvisionnement Étape par Étape",

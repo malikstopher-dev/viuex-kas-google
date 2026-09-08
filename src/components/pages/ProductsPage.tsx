@@ -26,7 +26,7 @@ const productDatabase: ProductItem[] = [
     category: 'lifting',
     specEn: 'Grade 80 alloy load chain, double pawl brake system, drop forged hooks with heavy-duty safety latches.',
     specFr: 'Chaîne de charge en alliage Grade 80, système de frein à double cliquet, crochets forgés avec linguets renforcés.',
-    standards: 'SANS / EN 13157 / CE certified',
+    standards: 'SANS / EN 13157',
     capacitiesEn: '0.5 Ton to 20 Ton (Standard lift 3m, custom heights available)',
     capacitiesFr: '0,5 Tonne à 20 Tonnes (Hauteur standard 3m, courses sur mesure)',
     image: '/assets/akglobal/categories/lifting-equipment.jpg',
@@ -38,7 +38,7 @@ const productDatabase: ProductItem[] = [
     category: 'lifting',
     specEn: 'High-strength steel body, 360-degree handle rotation, neutral free-wheeling mechanism under no load.',
     specFr: 'Corps en acier haute résistance, rotation du levier à 360°, mécanisme de débrayage libre hors charge.',
-    standards: 'EN 13157 / ISO 9001 certified',
+    standards: 'EN 13157',
     capacitiesEn: '0.75 Ton to 9.0 Ton',
     capacitiesFr: '0,75 Tonne à 9,0 Tonnes',
     image: '/assets/akglobal/hero/hero-minimal-light-hook.jpg',
@@ -126,9 +126,9 @@ const productDatabase: ProductItem[] = [
     category: 'hardware',
     specEn: 'Heavy duty angle grinders, magnetic base drills, cutting & grinding discs, industrial welding rods.',
     specFr: 'Meuleuses industrielles, perceuses à base magnétique, disques de tronçonnage et électrodes de soudure.',
-    standards: 'Industrial grade OEM certification',
-    capacitiesEn: '220V/380V equipment and certified consumables',
-    capacitiesFr: 'Équipements 220V/380V et consommables certifiés',
+    standards: 'Industrial grade OEM specifications',
+    capacitiesEn: '220V/380V equipment and industrial consumables',
+    capacitiesFr: 'Équipements 220V/380V et consommables industriels',
     image: '/assets/akglobal/categories/industrial-hardware.jpg',
   },
   {
@@ -178,60 +178,60 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
   };
 
   return (
-    <div className="bg-[#F7F7F5] text-[#111318]">
+    <div className="bg-[#0E1015] text-[#D9DBDE]">
       {/* Header Banner */}
-      <section className="border-b border-[#D9DBDE] bg-white py-14 lg:py-18">
+      <section className="border-b border-[#25282E] bg-[#111318] py-14 lg:py-18">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl space-y-3">
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#A21A8D] block">
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A21A8D] block">
               {t.products.headerBadge}
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#111318] font-normal">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-white font-normal">
               {t.products.headerTitle}
             </h1>
-            <p className="text-sm sm:text-base text-[#666B73] leading-relaxed">
+            <p className="text-sm sm:text-base text-[#A0A5AD] leading-relaxed">
               {t.products.headerSubtitle}
             </p>
           </div>
 
           {/* Category Filter Tabs */}
-          <div className="flex flex-wrap gap-2 pt-8 border-t border-[#D9DBDE]/60 mt-8">
+          <div className="flex flex-wrap gap-2 pt-8 border-t border-[#25282E] mt-8">
             <button
               onClick={() => setActiveCategory('all')}
-              className={`px-5 py-2.5 rounded-xs text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
+              className={`px-5 py-2.5 rounded-[2px] text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
                 activeCategory === 'all'
-                  ? 'bg-[#111318] text-white'
-                  : 'bg-white text-[#666B73] border border-[#D9DBDE] hover:border-[#111318]'
+                  ? 'bg-[#A21A8D] text-white border border-[#A21A8D]'
+                  : 'bg-[#14161C] text-[#A0A5AD] border border-[#25282E] hover:border-white/40 hover:text-white'
               }`}
             >
               {t.products.allCategories}
             </button>
             <button
               onClick={() => setActiveCategory('lifting')}
-              className={`px-5 py-2.5 rounded-xs text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
+              className={`px-5 py-2.5 rounded-[2px] text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
                 activeCategory === 'lifting'
-                  ? 'bg-[#111318] text-white'
-                  : 'bg-white text-[#666B73] border border-[#D9DBDE] hover:border-[#111318]'
+                  ? 'bg-[#A21A8D] text-white border border-[#A21A8D]'
+                  : 'bg-[#14161C] text-[#A0A5AD] border border-[#25282E] hover:border-white/40 hover:text-white'
               }`}
             >
               {t.categories.lifting.title}
             </button>
             <button
               onClick={() => setActiveCategory('fasteners')}
-              className={`px-5 py-2.5 rounded-xs text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
+              className={`px-5 py-2.5 rounded-[2px] text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
                 activeCategory === 'fasteners'
-                  ? 'bg-[#111318] text-white'
-                  : 'bg-white text-[#666B73] border border-[#D9DBDE] hover:border-[#111318]'
+                  ? 'bg-[#A21A8D] text-white border border-[#A21A8D]'
+                  : 'bg-[#14161C] text-[#A0A5AD] border border-[#25282E] hover:border-white/40 hover:text-white'
               }`}
             >
               {t.categories.fasteners.title}
             </button>
             <button
               onClick={() => setActiveCategory('hardware')}
-              className={`px-5 py-2.5 rounded-xs text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
+              className={`px-5 py-2.5 rounded-[2px] text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
                 activeCategory === 'hardware'
-                  ? 'bg-[#111318] text-white'
-                  : 'bg-white text-[#666B73] border border-[#D9DBDE] hover:border-[#111318]'
+                  ? 'bg-[#A21A8D] text-white border border-[#A21A8D]'
+                  : 'bg-[#14161C] text-[#A0A5AD] border border-[#25282E] hover:border-white/40 hover:text-white'
               }`}
             >
               {t.categories.hardware.title}
@@ -248,12 +248,12 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
             return (
               <div
                 key={product.id}
-                className="bg-white border border-[#D9DBDE] rounded-xs p-6 lg:p-8 hover:border-[#111318] transition-colors"
+                className="bg-[#14161C] border border-[#25282E] rounded-[2px] p-6 lg:p-8 hover:border-white/30 transition-colors"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   {/* Product Visual */}
                   <div className="lg:col-span-3">
-                    <div className="aspect-[4/3] rounded-xs overflow-hidden border border-[#D9DBDE] bg-[#25282E]">
+                    <div className="aspect-[4/3] rounded-[2px] overflow-hidden border border-[#25282E] bg-[#1A1D24]">
                       <img
                         src={product.image}
                         alt={language === 'fr' ? product.nameFr : product.nameEn}
@@ -269,34 +269,34 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
                       <span className="text-[10px] font-mono tracking-widest text-[#A21A8D] uppercase font-semibold">
                         {product.category}
                       </span>
-                      <span className="text-[#D9DBDE]">•</span>
-                      <span className="text-[10px] font-mono text-[#666B73]">
+                      <span className="text-[#25282E]">•</span>
+                      <span className="text-[10px] font-mono text-[#A0A5AD]">
                         {product.standards}
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-serif text-[#111318] font-normal">
+                    <h3 className="text-xl font-serif text-white font-normal">
                       {language === 'fr' ? product.nameFr : product.nameEn}
                     </h3>
 
-                    <p className="text-xs text-[#666B73] leading-relaxed">
+                    <p className="text-xs text-[#A0A5AD] leading-relaxed">
                       {language === 'fr' ? product.specFr : product.specEn}
                     </p>
 
-                    <div className="pt-2 text-xs text-[#25282E] flex items-center space-x-2">
-                      <strong className="font-semibold">{t.products.scopeRange}:</strong>
+                    <div className="pt-2 text-xs text-[#D9DBDE] flex items-center space-x-2">
+                      <strong className="font-semibold text-white">{t.products.scopeRange}:</strong>
                       <span>{language === 'fr' ? product.capacitiesFr : product.capacitiesEn}</span>
                     </div>
                   </div>
 
                   {/* Action Column (3 cols) */}
-                  <div className="lg:col-span-3 flex flex-col justify-center items-start lg:items-end space-y-3 pt-4 lg:pt-0 border-t lg:border-t-0 border-[#D9DBDE]">
+                  <div className="lg:col-span-3 flex flex-col justify-center items-start lg:items-end space-y-3 pt-4 lg:pt-0 border-t lg:border-t-0 border-[#25282E]">
                     <button
                       onClick={() => handleAddToRfq(product)}
-                      className={`w-full lg:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xs text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
+                      className={`w-full lg:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-[2px] text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer border ${
                         isAdded
-                          ? 'bg-emerald-700 text-white'
-                          : 'bg-[#111318] text-white hover:bg-[#25282E]'
+                          ? 'bg-emerald-800 border-emerald-700 text-white'
+                          : 'bg-[#A21A8D] hover:bg-[#871375] border-[#A21A8D] text-white'
                       }`}
                     >
                       {isAdded ? (
@@ -306,13 +306,13 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
                         </>
                       ) : (
                         <>
-                          <Plus className="w-3.5 h-3.5 text-[#A21A8D]" />
+                          <Plus className="w-3.5 h-3.5 text-white" />
                           <span>{t.products.addToRfq}</span>
                         </>
                       )}
                     </button>
 
-                    <span className="text-[11px] text-[#666B73]">
+                    <span className="text-[11px] text-[#A0A5AD]">
                       {t.products.rfqNotice}
                     </span>
                   </div>
@@ -323,7 +323,7 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
         </div>
 
         {/* Custom Sourcing Callout for Unlisted Products */}
-        <div className="mt-16 bg-[#25282E] text-white p-8 lg:p-12 rounded-xs border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="mt-16 bg-[#14161C] text-white p-8 lg:p-12 rounded-[2px] border border-[#25282E] flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-2 max-w-2xl">
             <span className="text-[10px] font-mono tracking-widest text-[#A21A8D] uppercase block">
               Specialized Procurement
@@ -338,7 +338,7 @@ export const ProductsPage: React.FC<{ initialCategory?: 'all' | 'lifting' | 'fas
 
           <button
             onClick={() => navigate('rfq')}
-            className="inline-flex items-center space-x-2 bg-white text-[#111318] hover:bg-[#F7F7F5] px-6 py-3.5 rounded-xs text-xs font-semibold tracking-widest uppercase transition-colors cursor-pointer shrink-0"
+            className="inline-flex items-center space-x-2 bg-white text-[#111318] hover:bg-[#F7F7F5] px-6 py-3.5 rounded-[2px] text-xs font-semibold tracking-widest uppercase transition-colors cursor-pointer shrink-0"
           >
             <FileText className="w-4 h-4 text-[#A21A8D]" />
             <span>{t.products.requestCustomQuote}</span>
