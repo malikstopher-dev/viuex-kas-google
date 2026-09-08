@@ -20,9 +20,17 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (typeof window === 'undefined') {
       return { routeId: 'home' as RouteId, lang: 'en' as Language };
     }
-    const stored = localStorage.getItem('akglobal_lang') as Language | null;
-    const defaultLang = stored === 'fr' || stored === 'en' ? stored : 'en';
-    return resolvePath(window.location.pathname, defaultLang);
+    let defaultLang: Language = 'en';
+    try {
+      const stored = localStorage.getItem('akglobal_lang') as Language | null;
+      if (stored === 'fr' || stored === 'en') {
+        defaultLang = stored;
+      }
+    } catch {
+      // ignore storage access error
+    }
+    const path = window.location?.pathname || '/';
+    return resolvePath(path, defaultLang);
   };
 
   const [currentRouteId, setCurrentRouteId] = useState<RouteId>(() => initialResolution().routeId);
@@ -31,9 +39,14 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   // Sync with browser URL popstate
   useEffect(() => {
     const handlePopState = () => {
-      const { routeId, lang } = resolvePath(window.location.pathname, language);
-      setCurrentRouteId(routeId);
-      setLanguageState(lang);
+      try {
+        const path = window.location?.pathname || '/';
+        const { routeId, lang } = resolvePath(path, language);
+        setCurrentRouteId(routeId);
+        setLanguageState(lang);
+      } catch {
+        // ignore
+      }
     };
 
     window.addEventListener('popstate', handlePopState);
@@ -42,8 +55,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   // Update HTML lang attribute and document title whenever language or route changes
   useEffect(() => {
-    document.documentElement.lang = language;
-    localStorage.setItem('akglobal_lang', language);
+    try {
+      document.documentElement.lang = language;
+      localStorage.setItem('akglobal_lang', language);
+    } catch {
+      // ignore
+    }
   }, [language]);
 
   // Change language and smoothly transition URL while staying on current section/page
@@ -51,24 +68,48 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (newLang === language) return;
     setLanguageState(newLang);
     const newPath = getCounterpartUrl(currentRouteId, newLang);
-    window.history.pushState({}, '', newPath);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    try {
+      window.history.pushState({}, '', newPath);
+    } catch {
+      // ignore pushState sandbox errors
+    }
+    try {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch {
+      // ignore
+    }
   };
 
   // Navigate to a known route ID in current language
   const navigate = (routeId: RouteId) => {
     setCurrentRouteId(routeId);
     const targetUrl = getRouteUrl(routeId, language);
-    window.history.pushState({}, '', targetUrl);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    try {
+      window.history.pushState({}, '', targetUrl);
+    } catch {
+      // ignore pushState sandbox errors
+    }
+    try {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch {
+      // ignore
+    }
   };
 
   const navigateToUrl = (url: string) => {
     const { routeId, lang } = resolvePath(url, language);
     setCurrentRouteId(routeId);
     setLanguageState(lang);
-    window.history.pushState({}, '', url);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    try {
+      window.history.pushState({}, '', url);
+    } catch {
+      // ignore pushState sandbox errors
+    }
+    try {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch {
+      // ignore
+    }
   };
 
   const t = translations[language];

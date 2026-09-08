@@ -13,10 +13,14 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<Theme>(() => {
     if (typeof window === 'undefined') return 'light';
-    const stored = localStorage.getItem('akglobal_theme') as Theme | null;
-    if (stored === 'dark' || stored === 'light') return stored;
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
+    try {
+      const stored = localStorage.getItem('akglobal_theme') as Theme | null;
+      if (stored === 'dark' || stored === 'light') return stored;
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      }
+    } catch {
+      // ignore storage access error
     }
     return 'light';
   });
@@ -41,16 +45,32 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   // Listen to system preference changes if user hasn't explicitly set a preference in this session
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e: MediaQueryListEvent) => {
-      const stored = localStorage.getItem('akglobal_theme');
-      if (!stored) {
-        setThemeState(e.matches ? 'dark' : 'light');
-      }
-    };
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return;
+    try {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      if (!mediaQuery) return;
 
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
+      const handleChange = (e: MediaQueryListEvent | { matches: boolean }) => {
+        try {
+          const stored = localStorage.getItem('akglobal_theme');
+          if (!stored) {
+            setThemeState(e.matches ? 'dark' : 'light');
+          }
+        } catch {
+          // ignore
+        }
+      };
+
+      if (typeof mediaQuery.addEventListener === 'function') {
+        mediaQuery.addEventListener('change', handleChange);
+        return () => mediaQuery.removeEventListener('change', handleChange);
+      } else if (typeof (mediaQuery as unknown as { addListener: (cb: unknown) => void }).addListener === 'function') {
+        (mediaQuery as unknown as { addListener: (cb: unknown) => void }).addListener(handleChange);
+        return () => (mediaQuery as unknown as { removeListener: (cb: unknown) => void }).removeListener(handleChange);
+      }
+    } catch {
+      // ignore
+    }
   }, []);
 
   const toggleTheme = () => {
