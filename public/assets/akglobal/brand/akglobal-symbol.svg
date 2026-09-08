@@ -1,0 +1,13 @@
+<svg viewBox="0 0 160 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="akSwooshGrad" x1="10" y1="90" x2="150" y2="15" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="25%" stop-color="#C026A8" />
+      <stop offset="70%" stop-color="#A21A8D" />
+      <stop offset="100%" stop-color="#7B0E6A" />
+    </linearGradient>
+  </defs>
+  <path d="M 14 96 L 46 16 L 68 16 L 92 96 L 68 96 L 63 76 L 38 76 L 33 96 Z M 43 56 L 58 56 L 51 28 Z" fill="#111318" />
+  <path d="M 88 16 L 110 16 L 110 96 L 88 96 Z M 110 52 L 138 16 L 164 16 L 128 58 L 166 96 L 138 96 L 110 66 Z" fill="#111318" />
+  <path d="M 6 86 C 18 64, 48 34, 100 20 C 124 13, 146 12, 162 10 C 152 14, 134 20, 112 28 C 64 46, 32 72, 12 94 C 9 92, 7 89, 6 86 Z" fill="url(#akSwooshGrad)" />
+</svg>

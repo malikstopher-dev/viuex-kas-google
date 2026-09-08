@@ -1,0 +1,6 @@
+{
+  "name": "AKGLOBAL TRADING PTY",
+  "description": "Official bilingual industrial supply and procurement platform for AKGLOBAL TRADING PTY, based in South Africa and serving businesses across South Africa and the Democratic Republic of the Congo (DRC).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
